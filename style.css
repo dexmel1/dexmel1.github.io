@@ -1,0 +1,215 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Consolas, "Courier New", monospace;
+    background: #0d0d0f; /* deep dungeon black */
+    color: #e0e0e0;
+}
+
+a {
+    color: #7ec8ff; /* glowing blue link */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #b7e2ff;
+    text-shadow: 0 0 5px #7ec8ff;
+}
+
+/* ================================
+   PAGE LAYOUT
+=================================== */
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    color: #eaeaea;
+    border-bottom: 2px solid #272727;
+}
+
+.header .box h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-shadow: 0 0 5px #5f5f5f;
+}
+
+.header .center h2 {
+    margin: 0;
+    font-size: 1.7rem;
+    color: #a8ffd6; /* soft green glow */
+    text-shadow: 0 0 12px #3cffb6;
+}
+
+/* ================================
+   SIDEBAR NAVIGATION
+=================================== */
+
+.menu {
+    float: left;
+    width: 20%;
+    padding: 20px;
+    background: #111115;
+    border-right: 2px solid #2a2a2a;
+    min-height: 100vh;
+}
+
+.menu h3 {
+    margin-top: 25px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #333;
+    color: #ffdd7e;
+    text-shadow: 0 0 8px #ffdd7e;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin-bottom: 10px;
+}
+
+.menu li a {
+    color: #d1d1d1;
+    transition: 0.2s;
+}
+
+.menu li a:hover {
+    margin-left: 4px;
+    color: #ffe8a8;
+    text-shadow: 0 0 8px #ffdd7e;
+}
+
+/* ================================
+   MAIN CONTENT AREA
+=================================== */
+
+.content {
+    margin-left: 22%;
+    padding: 30px;
+    background: #141418;
+}
+
+.content h3 {
+    margin-top: 50px;
+    color: #78e8ff;
+    text-shadow: 0 0 10px #78e8ff;
+    border-bottom: 1px solid #444;
+    padding-bottom: 8px;
+}
+
+/* sub-section title */
+.content h4 {
+    margin-top: 40px;
+    color: #ff9f7e;
+    text-shadow: 0 0 8px #ff9f7e;
+}
+
+/* ================================
+   SLIDESHOWS
+=================================== */
+
+.image-container {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 650px;
+    border: 2px solid #303030;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 auto;
+    background: #0f0f12;
+    box-shadow: 0 0 10px #000;
+}
+
+.mySlides1, .mySlides2, .mySlides3 {
+    display: none;
+}
+
+/* image fade-in */
+.slideshow-container img {
+    width: 100%;
+    display: block;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* next/prev buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 12px;
+    color: #f0f0f0;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.3s;
+    user-select: none;
+}
+
+.prev {
+    left: 5px;
+}
+
+.next {
+    right: 5px;
+}
+
+.prev:hover, .next:hover {
+    color: #ffdd7e;
+    text-shadow: 0 0 10px #ffdd7e;
+}
+
+/* ================================
+   CONTENT ELEMENTS
+=================================== */
+
+p, li {
+    line-height: 1.55rem;
+}
+
+.code-block,
+pre,
+code {
+    background: #1c1c22;
+    padding: 4px 8px;
+    border-radius: 5px;
+    color: #9cdcff;
+}
+
+iframe {
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 0 12px #000;
+}
+
+/* ================================
+   MOBILE RESPONSIVE
+=================================== */
+
+@media(max-width: 900px) {
+    .menu {
+        width: 100%;
+        float: none;
+        min-height: auto;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+}

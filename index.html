@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>DungeonExplorer CS-499 Capstone</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <span class="box">
+                    <h1 class="lowercase">Dexter Melton: </h1>
+                </span>
+                <div class="center">
+                    <h2 class="lowercase">CS-499 Dungeon Explorer</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="menu">
+                <div class="contact">
+                    <h3 class="lowercase">> Contact Info:</h3>
+                    <p>e-mail: <a href="mailto:dexter.melton@outlook.com">youremail@example.com</a></p>
+                    <p>github: <a href="https://github.com/dexmel1">your-github</a></p>
+                    <p>linkedin: <a href="https://www.linkedin.com/in/dexter-melton/">in/your-profile</a></p>
+                </div>
+
+                <div class="navigate">
+                    <h3 class="lowercase">> Navigation Links:</h3>
+                    <ul>
+                        <li><a href="#about">About the Developer</a></li>
+                        <li><a href="#artifact">The DungeonExplorer Artifact</a></li>
+                        <li><a href="#python">Original Python Console Game</a></li>
+                        <li><a href="#csharp">C# GUI Conversion</a></li>
+                        <li><a href="#codereview">Artifact Code Review</a></li>
+                        <li><a href="#enhancements">Enhancement Overview</a></li>
+                        <li><a href="#software">- Software Design & Engineering</a></li>
+                        <li><a href="#algorithms">- Algorithm & Data Structures</a></li>
+                        <li><a href="#databases">- Data Persistence</a></li>
+                        <li><a href="#final">The Final Buiild</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content">
+                <!-- ABOUT -->
+                <div id="about"><h3 class="lowercase">> About the Developer</h3></div>
+                <p>
+                    Hi, I’m Dex, a project manager and computer science student <--! with a passion for games, clean architecture, 
+                    and turning rough prototypes into polished experiences. For my CS-499 capstone, I chose to take a simple 
+                    Python console dungeon crawler and transform it into a modern C# graphical application, focusing on 
+                    maintainable design, user experience, and industry-aligned practices. -->
+                </p>
+
+                <!-- ARTIFACT OVERVIEW -->
+                <div id="artifact"><h3 class="lowercase">> The DungeonExplorer Artifact</h3></div>
+                <p>
+                    DungeonExplorer began life as a text-based adventure written in Python. The original game let the player 
+                    move through a small dungeon map, collect items, and face a final encounter that resulted in either a win 
+                    or a loss. All interaction happened through the console using commands like 
+                    <code>go north</code> and <code>get key</code>.
+                </p>
+                <p>
+                    For the capstone, I selected this artifact because it is small enough to understand quickly, but rich 
+                    enough to demonstrate software design, refactoring, and UI transformation. The enhanced version is a C# GUI 
+                    application that preserves the core gameplay loop while significantly improving structure, readability, and 
+                    player experience.
+                </p>
+
+                <!-- ORIGINAL PYTHON -->
+                <div id="python"><h3 class="lowercase">> Original Python Console Game</h3></div>
+                <p>
+                    The original Python implementation used a global state dictionary to represent rooms, items, and player 
+                    location. A main game loop repeatedly printed the current room, read the player’s text input, and then 
+                    updated state based on a series of conditional checks. While functional, the design had several limitations:
+                </p>
+                <ul>
+                    <li>Heavily procedural with limited separation of concerns</li>
+                    <li>Game logic and user interface (console I/O) tightly coupled</li>
+                    <li>Difficult to extend with new features or alternate interfaces</li>
+                 </ul> 
+                 
+				
+                <!-- C# GUI CONVERSION -->
+                <div id="csharp"><h3 class="lowercase">> C# GUI Conversion</h3></div>
+                <p>
+                    The enhanced DungeonExplorer is implemented in C# with a graphical user interface. Rather than typing 
+                    commands, the player interacts with buttons for movement, item interaction, and game actions. The underlying 
+                    codebase was restructured to follow a more modern architecture that separates the UI from the game logic.
+                </p>
+                <p>
+                    The core goals of the conversion were:
+                </p>
+                <ul>
+                    <li>Separate game rules from presentation logic</li>
+                    <li>Introduce a clear domain model for rooms, items, and the player</li>
+                    <li>Leverage the C# ecosystem and tooling (Visual Studio, .NET, etc.)</li>
+                </ul>
+
+                
+
+                <!-- CODE REVIEW -->
+                <div id="codereview"><h3 class="lowercase">> Artifact Code Review</h3></div>
+                <p>
+                    In this code review, I walk through the evolution of DungeonExplorer, from the original Python console 
+                    version to the refactored C# GUI implementation. I focus on design decisions, trade-offs, and how applying 
+                    patterns like MVVM improved testability and maintainability.
+                </p>
+                <iframe width="750" height="422" 
+                        src="video/MeltonInitialCodeReview.mp4" 
+                        title="DungeonExplorer Code Review" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                </iframe>
+
+                <!-- ENHANCEMENT OVERVIEW -->
+                <div id="enhancements"><h3 class="lowercase">> Enhancement Overview</h3></div>
+                <p>
+                    The primary enhancement focus for DungeonExplorer is <strong>software design and engineering</strong>, 
+                    specifically refactoring an academic prototype into a structured application that resembles professional 
+                    game architecture. Along the way, I also improved the way game data is represented and explored future 
+                    options for persistence.
+                </p>
+
+                <!-- SOFTWARE DESIGN & ENGINEERING -->
+                <div id="software"><h4 class="lowercase">>> Software Design & Engineering</h4></div>
+                <p>
+                    The C# version of DungeonExplorer is organized around clear responsibilities and a more maintainable 
+                    structure. Key changes include:
+                </p>
+                <ul>
+                    <li>
+                        <strong>MVVM-style separation:</strong> A <code>GameViewModel</code> exposes properties such as 
+                        <code>CurrentRoom</code>, <code>AvailableMoves</code>, and <code>Inventory</code>, while the view handles 
+                        only layout and binding.
+                    </li>
+                    <li>
+                        <strong>Domain classes:</strong> Separate classes for <code>Room</code>, <code>Item</code>, and 
+                        <code>Player</code> replace loosely defined dictionaries and global variables.
+                    </li>
+                    <li>
+                        <strong>Command-based input:</strong> Movement and item actions are encapsulated as commands, which makes 
+                        it easier to wire buttons and potentially add keyboard shortcuts later.
+                    </li>
+                </ul>
+                
+                <p>
+                    These changes demonstrate the ability to migrate a prototype into a layered architecture that is easier to 
+                    extend and reason about, aligning with industry expectations for software design and engineering.
+                </p>
+
+                <!-- ALGORITHMS & DATA STRUCTURES -->
+                <div id="algorithms"><h4 class="lowercase">>> Algorithms & Sata Structures</h4></div>
+                <p>
+                    Although DungeonExplorer is a relatively small game, it still benefits from intentional data structures and 
+                    algorithm choices:
+                </p>
+                <ul>
+                    <li>
+                        The dungeon is modeled as a graph of <code>Room</code> nodes, each with references to adjacent rooms 
+                        (north, south, east, west). This makes it straightforward to validate legal moves and visualize the map.
+                    </li>
+                    <li>
+                        The player’s inventory is stored as a collection (e.g., <code>List&lt;Item&gt;</code>) that drives both 
+                        UI binding and win-condition logic.
+                    </li>
+                    <li>
+                        Win/lose conditions are evaluated through a small rule engine that checks both player location and 
+                        inventory contents, keeping the game loop simple and deterministic.
+                    </li>
+                </ul>
+                <p>
+                    In a larger production setting, this same approach could be extended to pathfinding, quest tracking, or more 
+                    advanced combat systems.
+                </p>
+
+                <!-- DATA PERSISTENCE / DATABASES -->
+                <div id="databases"><h4 class="lowercase">>> Data Persistence</h4></div>
+                <p>
+                    For DungeonExplorer, persistence is intentionally lightweight. 
+                </p>
+                <p>
+                    While this artifact does not focus on a full relational database, the same architectural choices would make it 
+                    straightforward to add features like:
+                </p>
+                <ul>
+                    <li>Saving and loading player progress</li>
+                    <li>Tracking high scores across multiple runs</li>
+                </ul>
+
+                <!-- FINAL PRODUCT -->
+                <div id="final"><h3 class="lowercase">> The Final Build</h3></div>
+                <p>
+                    The final DungeonExplorer build is a C# GUI application that preserves the spirit of the original Python 
+                    console game while showcasing improved structure, user experience, and readiness for future enhancements. 
+                    Players can visually explore the dungeon, monitor their inventory at a glance, and clearly see their path to 
+                    victory or defeat.
+                </p>
+                <p>
+                    <a href="https://github.com/dexmel1/SNHU-CS-499">
+                        view the DungeonExplorer repository on github
+                    </a>
+                </p>
+                
+            </div>
+        </div>
+
+        
+    </body>
+</html>
